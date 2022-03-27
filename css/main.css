@@ -19,8 +19,13 @@ body {
 }
 
 h1 {
-  font-size: 80px;
-  margin-bottom: 0;
+  font-size: 70px;
+}
+
+h2 {
+  margin-top: auto;
+  font-size: 40px;
+  padding-bottom: 40px;
 }
 
 .container {
@@ -61,6 +66,8 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #play-again-btn:hover{

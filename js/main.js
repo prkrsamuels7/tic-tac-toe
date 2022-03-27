@@ -7,19 +7,20 @@ const winCon = [
   [2, 4, 6],
   [0, 4, 8],
   [3 ,4 ,5]
-]
+];
 
 
 let squareBelongsTo = {
   '1': 'x',
   '-1': 'o',
   'null': ''
-}
+};
 let board;
 let playerTurn;
 let winner;
 
 const boxes = document.querySelectorAll('.box');
+const winMsg = document.querySelector('h2');
 
 document.getElementById('board').addEventListener('click', handleClick);
 document.getElementById('play-again-btn').addEventListener('click', init);
@@ -36,13 +37,26 @@ function init() {
 function render() {
   board.forEach(function(box, i) {
     boxes[i].innerHTML = squareBelongsTo[box];
-  })
+  });
+  // getWinner();
+  // if (winner === 1) {
+  //   winMsg.innerText = `${squareBelongsTo[winner]}'s WIN!`
+  // } else if (winner === -1) {
+  //   winMsg.innerText = `${squareBelongsTo[winner]}'s WIN!`
+  // } 
 };
 
 function handleClick(evt) {
-  const i = evt.target.id.replace('b', '');
-  if(board[i]) return;
-  board[i] = playerTurn;
+  const isOccupied = evt.target.id.replace('b', '');
+  if(board[isOccupied]) return;
+  board[isOccupied] = playerTurn;
   render();
   playerTurn *= -1;
 };
+
+// function getWinner() {
+//   if(Math.abs(board[0] + board[1] + board[2]) === 3) {
+//     winner = playerTurn;
+//     return winner;
+//   }
+// };
