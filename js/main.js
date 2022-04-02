@@ -50,6 +50,7 @@ function render() {
 
 function handleClick(evt) {
   const isOccupied = evt.target.id.replace('b', '');
+  console.log(evt.target);
   if(board[isOccupied]) return;
   board[isOccupied] = playerTurn;
   turnMsg.innerText = `turn: ${squareBelongsTo[playerTurn * -1]}`
